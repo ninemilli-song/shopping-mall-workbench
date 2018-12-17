@@ -1,4 +1,28 @@
-# All season investor FE Project
+# Shopping Mall Workbench FE Project
+
+## 项目初始化
+
+```bash
+npm install
+```
+
+## 启动开发环境
+
+```bash
+npm run dev
+```
+
+## 生产环境启动服务器
+
+```bash
+npm run start
+```
+
+## 项目构建
+
+```bash
+npm run build
+```
 
 ## 技术栈
 
