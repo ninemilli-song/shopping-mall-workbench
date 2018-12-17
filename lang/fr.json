@@ -1,0 +1,5 @@
+{
+    "description": "Un exemple d'application intégrant React Intl avec Next.js",
+    "greeting": "Bonjour le monde!",
+    "pageTitle": "Asset Analysis - fr"
+}

@@ -1,0 +1,63 @@
+{
+  "name": "all-season-investor-fe",
+  "version": "1.0.0",
+  "description": "all-season-investor front-end project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build ./src && node ./scripts/default-lang.js",
+    "start": "NODE_ENV=production node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninemilli-song/all-season-investor-fe.git"
+  },
+  "keywords": [
+    "all-season-investor",
+    "front-end",
+    "next",
+    "react",
+    "mobx",
+    "antd"
+  ],
+  "author": "ninemill.song",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ninemilli-song/all-season-investor-fe/issues"
+  },
+  "homepage": "https://github.com/ninemilli-song/all-season-investor-fe#readme",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "accepts": "^1.3.5",
+    "antd": "^3.10.3",
+    "axios": "^0.18.0",
+    "babel-plugin-react-intl": "^3.0.1",
+    "glob": "^7.1.3",
+    "intl": "^1.2.5",
+    "jwt-decode": "^2.2.0",
+    "mobx": "^5.5.2",
+    "mobx-react": "^5.3.6",
+    "mobx-state-tree": "^3.7.1",
+    "next": "^7.0.2",
+    "node-sass": "^4.10.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-intl": "^2.7.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "postcss": "^7.0.5",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0"
+  }
+}
