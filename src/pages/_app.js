@@ -4,6 +4,7 @@ import { getSnapshot } from 'mobx-state-tree';
 import Layout from '../components/Layout';
 import { loggedIn, getProfile } from '../util/AuthService';
 import initUserListStore from '../stores/UserStore';
+import initSettingStore from '../stores/SettingStore';
 
 export default class CustomApp extends App {
     static async getInitialProps({ Component, ctx }) {
@@ -18,13 +19,22 @@ export default class CustomApp extends App {
         const isServer = !!ctx.req;
         const userInfo = getSnapshot(initUserListStore(isServer, userProfile));
 
-        return { pageProps, userInfo, isServer };
+        const settingJson = getSnapshot(initSettingStore(isServer));
+
+        return { 
+            pageProps, 
+            userInfo, 
+            isServer, 
+            settingJson 
+        };
     }
 
     constructor(props, context) {
         super(props, context);
 
         this.userStore = initUserListStore(props.isServer, props.userInfo);
+
+        this.settingStore = initSettingStore(props.settingJson);
     }
 
     componentDidMount() {
@@ -47,7 +57,11 @@ export default class CustomApp extends App {
 
         return (
             <Container>
-                <Layout title={pageProps.title} userStore={this.userStore}>
+                <Layout 
+                    title={pageProps.title} 
+                    userStore={this.userStore} 
+                    settingStore={this.settingStore}
+                >
                     <Component {...pageProps} userStore={this.userStore} />
                 </Layout>
             </Container>

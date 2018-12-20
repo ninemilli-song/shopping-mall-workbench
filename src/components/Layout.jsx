@@ -1,9 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 import Header from './Header';
-import './layout.scss';
+import Siderbar from './Siderbar';
+import './style/layout.scss';
 
-export default ({ title, children, userStore }) => (
+export default ({ 
+    title, 
+    children, 
+    userStore, 
+    settingStore 
+}) => (
     <div>
         <Head>
             <title>
@@ -20,9 +26,12 @@ export default ({ title, children, userStore }) => (
                 }`
             }
         </style>
-        <div className="asi-body">
-            <Header userStore={userStore} />
-            { children }
+        <div className="app-body">
+            <Siderbar menus={settingStore.menus} />
+            <div className="app-container">
+                <Header userStore={userStore} />
+                { children }
+            </div>
         </div>
     </div>
 );
