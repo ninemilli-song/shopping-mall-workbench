@@ -22,10 +22,10 @@ class Header extends React.Component {
         return (
             <div className={this.prefixCls}>
                 <div className={`${this.prefixCls}-nav`}>
-                    <ul>
+                    {/* <ul>
                         <li>Home</li>
                         <li>AssetDetial</li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <div className={`${this.prefixCls}-user`}>
                     {
