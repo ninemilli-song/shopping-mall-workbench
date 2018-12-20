@@ -18,7 +18,6 @@ class Header extends React.Component {
 
     render() {
         const { userStore } = this.props;
-        console.log('Header render------> ', userStore);
 
         return (
             <div className={this.prefixCls}>

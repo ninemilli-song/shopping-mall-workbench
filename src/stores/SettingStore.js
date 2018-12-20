@@ -3,12 +3,21 @@
  * 菜单 用户信息
  */
 import { types, applySnapshot } from 'mobx-state-tree';
+import menus from '../global/menus';
+
+const SecondMenu = types.model({
+    id: types.number,
+    label: types.string, // 菜单显示名
+    key: types.string, // 菜单key 目前与页面名对应
+    icon: types.string
+});
 
 const Menu = types.model({
     id: types.number,
-    label: types.string,
-    key: types.string,
-    icon: types.string
+    label: types.string, // 菜单显示名
+    key: types.string, // 菜单key 目前与页面名对应
+    icon: types.string,
+    subMenus: types.maybeNull(types.array(SecondMenu))
 });
 
 const SettingStore = types.model({
@@ -17,50 +26,7 @@ const SettingStore = types.model({
 
 let store = null;
 
-const defaultMenus = [
-    {
-        id: 1,
-        label: '概况',
-        key: 'rules',
-        icon: 'mail',
-    },
-    {
-        id: 2,
-        label: '店鋪',
-        key: 'subjects',
-        icon: 'appstore',
-    },
-    {
-        id: 3,
-        label: '商品',
-        key: 'reports',
-        icon: 'pay-circle',
-    },
-    {
-        id: 4,
-        label: '订单',
-        key: 'indus',
-        icon: 'switcher',
-    },
-    {
-        id: 5,
-        label: '客户',
-        key: 'analysis',
-        icon: 'tool',
-    },
-    {
-        id: 6,
-        label: '数据',
-        key: 'entries',
-        icon: 'team',
-    },
-    {
-        id: 7,
-        label: '资产',
-        key: 'practice',
-        icon: 'team',
-    }
-];
+const defaultMenus = menus;
 
 export default function init(iserver, snapshot = null) {
     if (iserver) {

@@ -8,6 +8,7 @@ import initSettingStore from '../stores/SettingStore';
 
 export default class CustomApp extends App {
     static async getInitialProps({ Component, ctx }) {
+        const { pathname } = ctx;
         let pageProps = {};
 
         if (Component.getInitialProps) {
@@ -21,11 +22,16 @@ export default class CustomApp extends App {
 
         const settingJson = getSnapshot(initSettingStore(isServer));
 
+        // get selectedMenukey by pathname
+        console.log('App get pathname is ------> ', pathname.split('/'));
+        const menuSelectedKey = pathname.split('/')[1];
+
         return { 
             pageProps, 
             userInfo, 
             isServer, 
-            settingJson 
+            settingJson,
+            menuSelectedKey
         };
     }
 
@@ -53,7 +59,7 @@ export default class CustomApp extends App {
     }
 
     render() {
-        const { Component, pageProps } = this.props;
+        const { Component, pageProps, menuSelectedKey } = this.props;
 
         return (
             <Container>
@@ -61,6 +67,7 @@ export default class CustomApp extends App {
                     title={pageProps.title} 
                     userStore={this.userStore} 
                     settingStore={this.settingStore}
+                    menuSelectedKey={menuSelectedKey}
                 >
                     <Component {...pageProps} userStore={this.userStore} />
                 </Layout>

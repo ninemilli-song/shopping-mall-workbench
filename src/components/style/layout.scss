@@ -1,7 +1,19 @@
 @import '../../static/styles/variable.scss';
 
 .app {
+    &-app-siderbar {
+
+    }
+
     &-container {
-        margin-left: 90px;
+        margin-left: 200px;
+    }
+}
+
+.no-second-menu {
+    .app {
+        &-container {
+            margin-left: 90px;
+        }
     }
 }
