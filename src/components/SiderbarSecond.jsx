@@ -25,10 +25,13 @@ class SiderbarSecond extends React.Component {
     }
 
     render() {
-        const { menus, menuSelected } = this.props;
+        const { menus, menuSelected, title } = this.props;
 
         return (
             <div className={`${this.prefixCls}`}>
+                <div className={`${this.prefixCls}-title`}>
+                    {title}
+                </div>
                 <Menu
                     onClick={this.handleClick}
                     style={{ width: 110 }}

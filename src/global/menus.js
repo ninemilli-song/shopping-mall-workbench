@@ -13,6 +13,7 @@ const menus = [
         label: '店鋪',
         key: 'shop',
         icon: 'appstore',
+        alias: '店铺管理',
         subMenus: [
             {
                 id: 11,

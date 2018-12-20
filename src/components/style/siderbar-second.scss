@@ -5,4 +5,10 @@
     bottom: 0;
     width: 110px;
     background-color: red;
+
+    &-title {
+        padding-left: 20px;
+        height: 50px;
+        line-height: 50px;
+    }
 }

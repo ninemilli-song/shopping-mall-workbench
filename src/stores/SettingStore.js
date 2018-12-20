@@ -16,6 +16,7 @@ const Menu = types.model({
     id: types.number,
     label: types.string, // 菜单显示名
     key: types.string, // 菜单key 目前与页面名对应
+    alias: types.maybeNull(types.string), // 菜单别名
     icon: types.string,
     subMenus: types.maybeNull(types.array(SecondMenu))
 });

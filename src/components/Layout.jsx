@@ -5,6 +5,8 @@ import Header from './Header';
 import SiderbarFirst from './SiderbarFirst';
 import './style/layout.scss';
 import SiderbarSecond from './SiderbarSecond';
+import AppBottomActions from './AppBottomActions';
+import AppLogo from './AppLogo';
 
 export default ({ 
     title, 
@@ -57,15 +59,18 @@ export default ({
             </style>
             <div className={bodyCls}>
                 <div className="app-siderbar">
+                    <AppLogo />
                     <SiderbarFirst menus={menus} menuSelected={menuSelected} />
                     {
                         subMenuSelected ? (
                             <SiderbarSecond 
+                                title={menuSelected.alias}
                                 menus={menuSelected.subMenus} 
                                 menuSelected={subMenuSelected} 
                             />
                         ) : null
                     }
+                    <AppBottomActions />
                 </div>
                 <div className="app-container">
                     <Header userStore={userStore} />
