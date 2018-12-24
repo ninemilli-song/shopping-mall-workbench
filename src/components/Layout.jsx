@@ -1,17 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
 import classnames from 'classnames';
-import Header from './Header';
+// import Header from './Header';
 import SiderbarFirst from './SiderbarFirst';
 import './style/layout.scss';
 import SiderbarSecond from './SiderbarSecond';
 import AppBottomActions from './AppBottomActions';
 import AppLogo from './AppLogo';
+import '../static/styles/global.scss';
+import '../static/styles/common.scss';
 
 export default ({ 
     title, 
     children, 
-    userStore, 
+    // userStore, 
     menuSelectedKey,
     settingStore 
 }) => {
@@ -73,7 +75,7 @@ export default ({
                     <AppBottomActions />
                 </div>
                 <div className="app-container">
-                    <Header userStore={userStore} />
+                    {/* <Header userStore={userStore} /> */}
                     { children }
                 </div>
             </div>
