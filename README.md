@@ -1,5 +1,7 @@
 # Shopping Mall Workbench FE Project
 
+商城后台管理系统
+
 ## 项目初始化
 
 ```bash
@@ -57,7 +59,7 @@ npm run build
 
 [ninemill.song](https://github.com/ninemilli-song)
 
-## 感谢项目
+## 参考
 
 [nextjs-starter-kit](https://github.com/soulmachine/nextjs-starter-kit)
 
